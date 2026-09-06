@@ -52,7 +52,7 @@ print(total)
 # What is the standard deviation of the first 10 numbers in the fibonacci sequence? Use the numpy library to calculate the standard deviation.
 import numpy as np
 fib_numbers = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34] # first 10 fibonacci numbers
-standard_dev = np.std(fib_numbers) # calculates the standard dev with numpy's std function (had to google this, didn't know how to do it)
+standard_dev = np.std(fib_numbers) # calculates the standard dev with numpy's std function (had to google this, didn't know how to find or execute the standard deviation function in numpy)
 print("The standard deviation of the first 10 fibonacci numbers is: ", standard_dev)
 
 # %% ###########################################################
@@ -82,10 +82,10 @@ N_values = [5,10,15,20,25,30] # list of N values required
 
 sums = [] # empty list to store sums
 
-for each in N_values: #make the loop for each value in N_values
+for each in N_values: #make the loop for each value in N_values 
     answer = fibonacci_sum(each)
     sums.append(answer) # add answer to sums list
-
+# used ai to simplify thiis code section and explain the "for... in..." loop, bc i had forgotten how to do it
 print(sums)
 
 
@@ -127,12 +127,14 @@ print("The index of the first number above your limit is: ", result)
 ### did you mean even instead of odd? the function is called sum_even_fib and the code checks for even numbers, so I will assume you meant even.
 
 def sum_even_fib(limit):
-    a, b = 0, 1 #setting a and b to first two fibonacci numbers
+    a = 0
+    b = 1 #setting a and b to first two fibonacci numbers
     total = 0
     while b <= limit: # loop runs until fib number greater than limit
         if b % 2 == 0:  #checks if Fibonacci number is even
             total = total + b #dont replace total with b, need to add even number to entire total
-        a, b = b, a + b #move to next fib number
+        a = b
+        b= a + b #move to next fib number
     return total
 
 
@@ -140,6 +142,6 @@ def sum_even_fib(limit):
 limit = 50 # test number, i fiddled around and put in a bunch of diferent onces and it seems to work
 result = sum_even_fib(limit)
 print("The sum of all even Fibonacci numbers less than or equal to", limit, " is:", result)
-
+# used ai to help me udnerstad what was being asked of me in this problem, and to find an error I was facing in my function regarding what the total was supposed to be equal to  (line 135)
 # %%
 
